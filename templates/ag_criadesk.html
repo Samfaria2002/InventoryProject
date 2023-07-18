@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Criar registro</title>
+        <link rel="stylesheet" type="text/css" href="../static/create.css">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='create.css')}}">
+    </head>
+    <body>
+        <header class="bar_header"></header>
+        <div class="container">
+            <div class="box_cabecalho">
+                <div class="grid_box">
+                    <img src="{{ url_for('static', filename='images/a.png') }}" class="logo"/>
+                </div>
+                <div class="grid_box">
+                    <h1 class='list_title' style="text-align: center;">Criar registro</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <form class="form_father" method="POST" action="/desktop/add">
+                <div class="form_frame">
+                    <form class="form_son">
+                        <div class="box_form">
+                            <label>Nome da máquina:</label>
+                            <input type="text" name="nome" id="nome" required>
+                        </div>
+                                    
+                        <div class="box_form">
+                            <label>Usuário: </label>
+                            <input type="text" name="usuario" id="usuario">
+                        </div>
+                        
+                        <div class="box_form">
+                            <label>Departamento: </label>
+                            <input type="text" name="departamento" id="departamento">
+                        </div>
+                                    
+                        <div class="box_form">
+                            <label>Sistema: </label>
+                            <input type="text" name="sistema" id="sistema">
+                        </div>
+    
+                        <div class="box_form">
+                            <label>Office: </label>
+                            <input type="text" name="office" id="office">
+                        </div>
+                        
+                        <div class="box_form">
+                            <label>Tag: </label>
+                            <input type="text" name="tag" id="tag">
+                        </div>
+
+                        <div class="box_form">
+                            <label>Patrimônio: </label>
+                            <input type="text" name="patrimonio" id="patrimonio">
+                        </div>
+
+                        <div class="box_form">
+                            <input class="btn_envia" type="submit" value="Inserir">
+                        </div>
+                    </form>
+                    <div class="clear"></div>
+                </div>
+            </form>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

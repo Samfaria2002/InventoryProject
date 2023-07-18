@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Repositório</title>
+        <link rel="stylesheet" type="text/css" href="../static/list.css">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='list.css')}}">
+        <script src="https://kit.fontawesome.com/2ee3541046.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="bar_header"></header>
+        <div class="container">
+            <div class="box_cabecalho">
+                <div class="grid_box">
+                    <img src="{{ url_for('static', filename='images/a.png') }}" class="logo"/>
+                </div>
+                <div class="grid_box">
+                    <h1 class='list_title' style="text-align: center;">Software e Licenças</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box_search">
+                <form class="form_search" method="POST" action="/agenda/search">
+                    <input placeholder="Pesquise por nome" type="text" id="search" name="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <table class="table">
+                        <thead>
+                            <th>Nome do Produto</th>
+                            <th>Edição</th>
+                            <th>Versão</th>
+                            <th>Status</th>
+                            <th>Instalado</th>
+                            <th>Total Licensas</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            {% for agenda in agenda %}
+                            <tr>
+                                <td>{{agenda.nome}}</td>
+                                <td>{{agenda.edicao}}</td>
+                                <td>{{agenda.versao}}</td>
+                                <td><select class="use_box">
+                                    <option>Ativo</option>
+                                    <option>Inativo</option>
+                                </select></td>
+                                <td>{{agenda.fisico}}</td>
+                                <td>{{agenda.licensa}}</td>
+                                <td>
+                                    <a href="/agenda/update/{{agenda.id}}" class="btn_alterar" role="button" aria-pressed="true"><p>Alterar</p></a>
+                                    <a href="/agenda/delete/{{agenda.id}}" class="btn_apagar" role="button" aria-pressed="true"><p>Apagar</p></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="box_novo">
+                        <a href="/agenda" class="btn_novo" role="button" aria-pressed="true"><p>Voltar</p></a>
+                    </div>
+                    <div class="box_novo">
+                        <a href="/agenda/create" class="btn_novo" role="button" aria-pressed="true"><p>Novo</p></a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

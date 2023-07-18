@@ -1,0 +1,36 @@
+{
+    "software": [
+        {
+            "id": 1,
+            "nome": "Windows",
+            "edicao": "Profissional",
+            "versao": "11",
+            "fisico": 13,
+            "licensa": 2
+        },
+        {
+            "id": 2,
+            "nome": "Office",
+            "edicao": "2021",
+            "versao": "5.0",
+            "fisico": 24,
+            "licensa": 2
+        },
+        {
+            "id": 3,
+            "nome": "Call SQL",
+            "edicao": "-",
+            "versao": "-",
+            "fisico": 12,
+            "licensa": 12
+        },
+        {
+            "id": 4,
+            "nome": "Power BI",
+            "edicao": "Pro",
+            "versao": "-",
+            "fisico": 2,
+            "licensa": 2
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Atualizar registro</title>
+        <link rel="stylesheet" type="text/css" href="../static/create2.css">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='create2.css')}}">
+    </head>
+    <body>
+        <header class="bar_header"></header>
+        <div class="container">
+            <div class="box_cabecalho">
+                <div class="grid_box">
+                    <img src="{{ url_for('static', filename='images/a.png') }}" class="logo"/>
+                </div>
+                <div class="grid_box">
+                    <h1 class='list_title' style="text-align: center;">Atualizar registro</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <form class="form_father" method="POST" action="/agenda/upd">
+                <input type="hidden" id="id" name="id" value="{{agenda.id}}">
+                <div class="form_frame">
+                    <form class="form_son">
+                        <div class="box_form">
+                            <label>Nome: </label>
+                            <input type="text" name="nome" id="nome" value="{{agenda.nome}}">
+                        </div>
+                        <div class="box_form">
+                            <label>Edição: </label>
+                            <input type="text" name="edicao" id="edicao" value="{{agenda.edicao}}">
+                        </div>
+                        <div class="box_form">
+                            <label>Versão: </label>
+                            <input type="number" name="versao" id="versao" value="{{agenda.versao}}">
+                        </div>
+                        <div class="box_form">
+                            <label>Total físico instalado: </label>
+                            <input type="text" name="fisico" id="fisico" value="{{agenda.fisico}}">
+                        </div>
+                        <div class="box_form">
+                            <label>Licenças disponíveis: </label>
+                            <input type="number" name="licensa" id="licensa" value="{{agenda.licensa}}">
+                        </div>
+                        <div class="box_form">
+                            <input class="btn_envia" type="submit" value="Atualizar">
+                        </div>
+                    </form>
+                </div>
+            </form>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

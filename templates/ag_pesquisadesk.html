@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Repositório</title>
+        <link rel="stylesheet" type="text/css" href="../static/dltdesk.css">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='ldltdesk.css')}}">
+        <script src="https://kit.fontawesome.com/2ee3541046.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="bar_header"></header>
+        <div class="container">
+            <div class="box_cabecalho">
+                <div class="grid_box">
+                    <img src="{{ url_for('static', filename='images/a.png') }}" class="logo"/>
+                </div>
+                <div class="grid_box">
+                    <h1 class='list_title' style="text-align: center;">Desktops</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box_search">
+                <form class="form_search" method="POST" action="/desktop/search">
+                    <input placeholder="Pesquisa" type="text" id="pesquisa" name="pesquisa">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <table class="table">
+                        <thead>
+                            <th>Nome da máquina</th>
+                            <th>Usuário</th>
+                            <th>Departamento</th>
+                            <th>Sistema</th>
+                            <th>Office</th>
+                            <th>Tag</th>
+                            <th>Patrimônio</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            {% for desktop in desktop %}
+                            <tr>
+                                <td>{{desktop.nome}}</td>
+                                <td>{{desktop.usuario}}</td>
+                                <td>{{desktop.departamento}}</td>
+                                <td>{{desktop.sistema}}</td>
+                                <td>{{desktop.office}}</td>
+                                <td>{{desktop.tag}}</td>
+                                <td>{{desktop.patrimonio}}</td>
+                                <td>
+                                    <a href="/desktop/update/{{desktop.id}}" class="btn_alterar" role="button" aria-pressed="true"><p>Alterar</p></a>
+                                    <a href="/desktop/delete/{{desktop.id}}" class="btn_apagar" role="button" aria-pressed="true"><p>Apagar</p></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="box_novo">
+                        <a href="/desktop" class="btn_novo" role="button" aria-pressed="true"><p>Voltar</p></a>
+                    </div>
+                    <div class="box_novo">
+                        <a href="/desktop/create" class="btn_novo" role="button" aria-pressed="true"><p>Novo</p></a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
